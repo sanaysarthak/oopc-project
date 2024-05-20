@@ -1,11 +1,12 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+using namespace std;
 
-void encryptFile(const std::string &inputFilePath, const std::string &outputFilePath, int key)
+void encryptFile(const string &inputFilePath, const string &outputFilePath, int key)
 {
-  std::ifstream inputFile(inputFilePath, std::ios::binary);
-  std::ofstream outputFile(outputFilePath, std::ios::binary);
+  ifstream inputFile(inputFilePath, ios::binary);
+  ofstream outputFile(outputFilePath, ios::binary);
 
   char ch;
   while (inputFile.get(ch))
@@ -17,10 +18,10 @@ void encryptFile(const std::string &inputFilePath, const std::string &outputFile
   outputFile.close();
 }
 
-void decryptFile(const std::string &inputFilePath, const std::string &outputFilePath, int key)
+void decryptFile(const string &inputFilePath, const string &outputFilePath, int key)
 {
-  std::ifstream inputFile(inputFilePath, std::ios::binary);
-  std::ofstream outputFile(outputFilePath, std::ios::binary);
+  ifstream inputFile(inputFilePath, ios::binary);
+  ofstream outputFile(outputFilePath, ios::binary);
 
   char ch;
   while (inputFile.get(ch))
@@ -34,21 +35,21 @@ void decryptFile(const std::string &inputFilePath, const std::string &outputFile
 
 int main()
 {
-  std::string inputFilePath, outputFilePath;
+  string inputFilePath, outputFilePath;
   int choice, key;
 
-  std::cout << "1. Encrypt File\n";
-  std::cout << "2. Decrypt File\n";
-  std::cout << "Enter your choice: ";
-  std::cin >> choice;
+  cout << "1. Encrypt File\n";
+  cout << "2. Decrypt File\n";
+  cout << "Enter your choice: ";
+  cin >> choice;
 
-  std::cout << "Enter key (integer): ";
-  std::cin >> key;
+  cout << "Enter key (integer): ";
+  cin >> key;
 
-  std::cout << "Enter input file path: ";
-  std::cin >> inputFilePath;
-  std::cout << "Enter output file path: ";
-  std::cin >> outputFilePath;
+  cout << "Enter input file path: ";
+  cin >> inputFilePath;
+  cout << "Enter output file path: ";
+  cin >> outputFilePath;
 
   if (choice == 1)
   {
@@ -60,7 +61,7 @@ int main()
   }
   else
   {
-      std::cout << "Invalid choice." << std::endl;
+      cout << "Invalid choice." << endl;
   }
 
   return 0;
