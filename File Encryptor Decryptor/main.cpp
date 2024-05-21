@@ -3,14 +3,13 @@
 #include <string>
 using namespace std;
 
-void encryptFile(const string &inputFilePath, const string &outputFilePath, int key)
-{
+void encryptFile(const string &inputFilePath, const string &outputFilePath, int key) {
+  
   ifstream inputFile(inputFilePath, ios::binary);
   ofstream outputFile(outputFilePath, ios::binary);
 
   char ch;
-  while (inputFile.get(ch))
-  {
+  while (inputFile.get(ch)) {
       outputFile.put(ch + key);
   }
 
@@ -18,14 +17,13 @@ void encryptFile(const string &inputFilePath, const string &outputFilePath, int 
   outputFile.close();
 }
 
-void decryptFile(const string &inputFilePath, const string &outputFilePath, int key)
-{
+void decryptFile(const string &inputFilePath, const string &outputFilePath, int key) {
+  
   ifstream inputFile(inputFilePath, ios::binary);
   ofstream outputFile(outputFilePath, ios::binary);
 
   char ch;
-  while (inputFile.get(ch))
-  {
+  while (inputFile.get(ch)) {
       outputFile.put(ch - key);
   }
 
@@ -33,13 +31,13 @@ void decryptFile(const string &inputFilePath, const string &outputFilePath, int 
   outputFile.close();
 }
 
-int main()
-{
+int main() {
+  
   string inputFilePath, outputFilePath;
   int choice, key;
 
-  cout << "1. Encrypt File\n";
-  cout << "2. Decrypt File\n";
+  cout << "1. Encrypt File" << endl;
+  cout << "2. Decrypt File" << endl;
   cout << "Enter your choice: ";
   cin >> choice;
 
@@ -52,17 +50,13 @@ int main()
   cin >> outputFilePath;
 
   if (choice == 1)
-  {
       encryptFile(inputFilePath, outputFilePath, key);
-  }
+    
   else if (choice == 2)
-  {
       decryptFile(inputFilePath, outputFilePath, key);
-  }
+  
   else
-  {
       cout << "Invalid choice." << endl;
-  }
 
   return 0;
 }
