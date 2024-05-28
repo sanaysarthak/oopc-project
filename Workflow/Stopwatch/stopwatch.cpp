@@ -1,35 +1,40 @@
 #include <iostream>
 #include <windows.h> // in windows: Sleep()
 // #include <unistd.h> // in linux: sleep()
-
 using namespace std;
 
-void displayTime(int minutes, int seconds, int milliseconds) {
-    system("cls"); // for windows 
+void displayTime(int minutes, int seconds, int milliseconds)
+{
+    system("cls"); // for windows
     // system("clear"); // for linux
+
     cout << "STOPWATCH in C++\n" << endl;
     cout << minutes << ":" << seconds << ":" << milliseconds << endl;
 }
 
-int main() {
+int main()
+{
     int min, sec, m_sec = 0; // initializing with 0
     cout << "Stopwatch in C++\n" << endl;
     cout << "Press ENTER to START Stopwatch.\nPress Ctrl + C to STOP Stopwatch." << endl;
-    cin.ignore();
+    cin.ignore(); // to take Enter as input
 
     displayTime(min, sec, m_sec);
 
-    while(true) {
+    while (true)
+    {
         Sleep(1);
 
         m_sec++;
 
-        if(m_sec > 59) {
+        if (m_sec > 59)
+        {
             sec++;
             m_sec = 0;
         }
 
-        if(sec > 59) {
+        if (sec > 59)
+        {
             min++;
             m_sec = 0;
             sec = 0;
