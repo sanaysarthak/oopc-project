@@ -2,30 +2,36 @@
 
 #include <iostream>
 #include <string>
-#include<cstdlib>
-#include<ctime>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
 // word pool to choose characters from for the password
 const char alphanum[] = "0123456789!@#$%^&*abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 int pool_len = sizeof(alphanum) - 1; // word pool length
 
-int main() 
+int main()
 {
     // password length
     int pass_len;
-    a: cout << "Enter length of password: ";
+
+inputLength: // label
+    cout << "Enter length of password: ";
     cin >> pass_len;
-    if(pass_len < 0){
-        cout << "Enter valid length!";
-        goto a;
+
+    if (pass_len < 8)
+    {
+        cout << "For better security, enter length of password to be greater than or equal to 8!\n" << endl;
+        goto inputLength;
     }
+
     srand(time(0));
 
     cout << "Generated Password: \t\t";
-    for(int i=0; i<pass_len; i++) 
+    for (int i = 0; i < pass_len; i++)
     {
         cout << alphanum[rand() % pool_len];
     }
+
     return 0;
 }
