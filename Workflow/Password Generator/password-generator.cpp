@@ -14,9 +14,12 @@ int main()
 {
     // password length
     int pass_len;
-    cout << "Enter length of password: ";
+    a: cout << "Enter length of password: ";
     cin >> pass_len;
-
+    if(pass_len < 0){
+        cout << "Enter valid length!";
+        goto a;
+    }
     srand(time(0));
 
     cout << "Generated Password: \t\t";
