@@ -132,6 +132,7 @@ int main()
                 cout << endl;
                 cout << "Stopwatch in C++\n" << endl;
                 cout << "Press ENTER to START Stopwatch.\nPress Ctrl + C to STOP Stopwatch." << endl;
+                cin.ignore();
                 cin.ignore(); // to take Enter as input
                 displayTime(min, sec, m_sec);
                 while (true)
