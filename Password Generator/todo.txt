@@ -1,2 +1,0 @@
-user choice based size of password
-8, 12 or 16 characters based password.
