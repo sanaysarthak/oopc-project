@@ -4,16 +4,19 @@
 
 using namespace std;
 
-void Timer(int hours, int minutes, int seconds) {
-    system("cls"); // for windows 
+void Timer(int hours, int minutes, int seconds)
+{
+    system("cls"); // for windows
     // system("clear"); // for linux
+
     cout << "TIMER in C++\n" << endl;
     cout << hours << ":" << minutes << ":" << seconds << endl;
 }
 
 // to do: add a pop up that timer is finished and also add a alert (beep) sound / audio.
 
-int main() {
+int main()
+{
     int hour, min, sec = 0; // initializing with 0
     cout << "Timer in C++\n" << endl;
     cout << "Enter hour: ";
@@ -22,10 +25,11 @@ int main() {
     cin >> min;
     cout << "Enter second: ";
     cin >> sec;
-    
+
     Timer(hour, min, sec);
 
-    while(true) {
+    while (true)
+    {
         Sleep(1000);
 
         if (sec == 0) {
@@ -36,13 +40,13 @@ int main() {
                 }
                 hour--;
                 min = 59;
-            } else {
-                min--;
             }
+            else
+                min--;
             sec = 59;
-        } else {
-            sec--;
         }
+        else
+            sec--;
 
         Timer(hour, min, sec);
     }
