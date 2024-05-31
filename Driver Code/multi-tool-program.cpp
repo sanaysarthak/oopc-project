@@ -11,6 +11,7 @@ using namespace std;
 const char alphanum[] = "0123456789!@#$%^&*abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 int pool_len = sizeof(alphanum) - 1; // word pool length
 
+// base class display
 class Display {
     public:
         void displayTime(int minutes, int seconds, int milliseconds)
@@ -32,6 +33,7 @@ class Display {
         }
 };
 
+// derived class ASCII from base class display
 class ASCII : public Display {
     public:
         void showASCII() {
@@ -74,6 +76,7 @@ class ASCII : public Display {
         }
 };
 
+// encryption class is hosting the functions encryptFile and decryptFile
 class Encryption {
     public:
         void encryptFile(const string &inputFilePath, const string &outputFilePath, int key)
@@ -109,8 +112,8 @@ class Encryption {
         }
 };
 
-void showASCII();
-void showToolInfo();
+// void showASCII();
+// void showToolInfo();
 
 int main()
 {
@@ -245,8 +248,8 @@ int main()
 
             default:
                 cout << "Enter correct choice. (1 to 4).\n" << endl;
+                break;
         }
-
     } while(ch != 0);
 
     return 0;
